@@ -1,11 +1,11 @@
 doctype html
 html
 	head
-		title ..::Log In::..
+		title #{title}
 	body
-		h1 Please Log In for FindingFan  
+		h1 Register Form  
 		//- form 
-		form(name="SignIn", method="POST" action="/users")
+		form(name="SignIn", method="POST" action="/createaccount")
 			//- div, span Username:, input(type=,name=)
 			div
 				span Username:&nbsp;&nbsp;
@@ -14,16 +14,14 @@ html
 			div 
 				span &nbsp;&nbsp;
 			div
-				span Password:&nbsp;&nbsp;
+				span Password:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				input(type="password",name="password")
 			//- div, input(type=submit,value=)
 			div 
 				span &nbsp;&nbsp;
 			div
-				input(type="submit",value="Sign In")
-				span &nbsp;&nbsp;
-		form(name="Register", method="GET" action="/regis")		
+				span Confirm Password:&nbsp;&nbsp;
+				input(type="password",name="confirmpassword")
+			div
 				input(type="submit",value="Register")
-			//- div, input(type=submit,value=) 
-			//- div, input(type=submit,value=) 
-				
+				span &nbsp;&nbsp;
