@@ -4,11 +4,15 @@ var router = express.Router();
 /* GET users listing. */
 router.get('/', function(req, res, next){
 
-	if (req.session.usrname){
-		//res.send(req.session.usrname);
-		res.render('list', { username: req.session.usrname });
+	if (req.session.username){
+		//res.send(req.session.username);
+		collection.find({},{},function(e,docs){
+    		res.render('list', docs);	
+  		})
+
 	}else{
 		res.redirect('/');
+		consol
 	}
 });
   
