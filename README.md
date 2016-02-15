@@ -1,2 +1,0 @@
-# findingfan
-Finding Fan App
