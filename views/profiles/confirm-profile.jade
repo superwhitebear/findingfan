@@ -1,0 +1,24 @@
+extends ../layout
+
+block content
+		h1 ..::Confirm Profile::..
+		form(name="confirmprofile", action="/list", method='post')
+		ul
+		
+			li= 'Name: '   + name
+			li= 'Age: ' + age + ' year'
+			li= 'Weight: ' + weight + ' kg.'
+			li= 'hight: ' + hight + ' cm.'
+			li= 'Birthday: ' + birthday
+			li= 'Gender: ' + gender	 
+			li= 'Location: ' + location 
+			li= 'Life Style: ' + style
+			li= 'Facebook: ' + facebook
+			li= 'Instargram: ' + ig
+			li= 'Twitter: ' + twitter
+			li= 'Lind ID: ' + line
+			li= 'Interested in: ' + interested	
+			<br>
+			div
+				input(type="submit", value="OK")
+	

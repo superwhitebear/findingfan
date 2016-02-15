@@ -1,0 +1,61 @@
+extends ../layout
+
+block content
+		h1 ..::Profile::..
+		form(name="profile", action="/profile/confirm", method='post')
+			div
+				span Name: &nbsp; 
+				input(type="text", name="name") 
+				<br><br>
+			div
+				span Age: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				input(type="text", name="age")
+				<br><br>
+			div
+				span Weight (kg): &nbsp;
+				input(type="number", name="weight")
+				<br><br>
+			div
+				span Hight (cm): &nbsp;
+				input(type="number", name="hight")
+				<br><br>
+			div
+				span Birthday: &nbsp;
+				input(type="text", name="birthday")
+				<br><br>	
+			div
+				span Gender: &nbsp;
+				input(type="text", name="gender")
+				<br><br>
+			div
+				span Location: &nbsp;
+				input(type="text", name="location")
+				<br><br>
+			div
+				span Life Style: &nbsp;
+				input(type="text", name="style")
+				<br><br>
+			div
+				span Facebook: &nbsp;
+				input(type="text", name="facebook")
+				<br><br>
+			div
+				span Instargram: &nbsp;
+				input(type="text", name="ig")
+				<br><br>
+			div
+				span Twitter: &nbsp;
+				input(type="text", name="twitter")
+				<br><br>
+			div
+				span Line ID: &nbsp;
+				input(type="text", name="line")
+				<br><br>
+			div
+				span Intersted in: &nbsp;
+				input(type="text", name="interested")
+				<br><br>
+			div
+				input(type="submit", value="Enter")
+				&nbsp;&nbsp;&nbsp;&nbsp;
+				input(type="submit", value="Cancel")
