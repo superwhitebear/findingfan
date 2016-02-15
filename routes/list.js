@@ -24,4 +24,9 @@ router.get('/search/',function(req, res ,next){
 router.post('/search/:usrname',function(req, res, next){
 
 });
+
+router.post('/list',function(req, res, next){
+	res.render('list');	
+});
+
 module.exports = router;

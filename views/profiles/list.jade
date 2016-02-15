@@ -1,0 +1,8 @@
+extends ../layout
+
+block content
+	h1 Users 
+	p total: #{userlist.length}
+	ul
+		- each user in userlist
+			li #{user.name} #{user.password}
