@@ -1,0 +1,27 @@
+doctype html
+html
+	head
+		title ..::Log In::..
+	body
+		h1 Please Log In for FindingFan  
+		//- form 
+		form(name="SignIn", method="POST" action="/users")
+			//- div, span Username:, input(type=,name=)
+			div
+				span Username:&nbsp;&nbsp;
+				input(type="text",name="username")
+			//- div, span Password:, input(type=,name=)
+			div 
+				span &nbsp;&nbsp;
+			div
+				span Password:&nbsp;&nbsp;
+				input(type="password",name="password")
+			//- div, input(type=submit,value=)
+			div 
+				span &nbsp;&nbsp;
+			div
+				input(type="submit",value="Sign In")
+				span &nbsp;&nbsp;
+				input(type="submit",value="Register")
+			//- div, input(type=submit,value=) 
+				
