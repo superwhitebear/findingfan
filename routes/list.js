@@ -12,7 +12,6 @@ router.get('/', function(req, res, next){
 
 	}else{
 		res.redirect('/');
-		consol
 	}
 });
   
