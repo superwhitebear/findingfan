@@ -1,0 +1,44 @@
+doctype html
+html
+	head
+		title = Search Finding Fan
+	body
+		h1 ..::Search Finding Fan::..
+	form(name="search", action="/list/search", method='post')
+		div
+			span Name:
+			input(type="text", name="name")
+		div
+			span Gender:
+			input(type="radio" name="gender" id="male" value="male")
+			input(type="radio" name="gender" id="female" value="female")
+			input(type="radio" name="gender" id="other" value="other") 
+		div
+			span Age:
+			select name="age"
+				option(value="age1") 10-30
+				option(value="age2") 31-40
+				option(value="age3") 41-60
+		div
+			span Weight:
+			select name="weight"
+				option(value="weight1") 0-50
+				option(value="weight2") 51-70
+				option(value="weight3") 70 UP
+			span kg.				
+		div
+			span Height:
+			select name="height"
+				option(value="height1") 0-100
+				option(value="height2") 101-150
+				option(value="height3") 150 UP	
+			span cm.								
+		div
+			span Lifestyle:
+			input(type="text", name="lifestyle")
+		div
+			span Interested in:
+			input(type="text", name="interested")
+		div
+			input(type="submit", value="Search")
+			input(type="submit", value="Cancel")
