@@ -9,7 +9,8 @@ router.get('/', function(req, res, next){
 		var db = req.db;
     	var collection = db.get('profiles');
 		collection.find({},{},function(e,docs){
-    		res.render('list', docs);	
+    		res.render('list', {docs: docs});	
+    		// res.json(docs);
   		})
 
 	}else{

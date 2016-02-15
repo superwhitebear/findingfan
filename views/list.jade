@@ -1,0 +1,10 @@
+doctype html
+html
+	head
+		title show
+	body
+		h1 Show All Register User 
+			ul
+				- each doc in docs
+					li= 'user: ' + doc.username + ' Age: ' + doc.age + ' Interest: ' + doc.interrested 
+					a(href="/Add/"+doc.username) Add

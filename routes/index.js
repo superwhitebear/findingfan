@@ -11,7 +11,7 @@ router.get('/regis',function(req, res, next) {
 	//res.send('Register Form');
 });
 
-router.post('/createaccount',function(req, res, netxt){
+router.post('/createaccount',function(req, res, next){
 
     if (req.body.username!=''&&req.body.password!=''&&req.body.password==req.body.confirmpassword){
     	var db = req.db;
@@ -29,6 +29,30 @@ router.post('/createaccount',function(req, res, netxt){
 		res.send('Data Input Error!! Please, Try again <META http-equiv="refresh" content="1;URL=http://localhost:3000/regis">');
 	}
     
+});
+
+router.get ('/Add/:usrname',function(req, res, next){
+
+	var username = req.params.usrname;
+
+	if (req.session.username){
+
+	var db = req.db;
+	var collection = db.get('profiles');
+
+	    collection.find({'username': username}, function(err, docs) {
+	        if (docs.length==1) {
+	            res.send('Added ' + username + ' to friend list <META http-equiv="refresh" content="1;URL=http://localhost:3000/list">');
+	        } else {
+	            // redirect to /users 
+	            res.send('Error,Please Contact Admin <META http-equiv="refresh" content="1;URL=http://localhost:3000/list">');
+	        }
+	    })
+	}else {
+		res.send('You are not authenticate,please login again <META http-equiv="refresh" content="1;URL=http://localhost:3000/">');
+	}
+
+	// res.send('Added ' + req.params.usrname + ' to friend list <META http-equiv="refresh" content="1;URL=http://localhost:3000/list">');
 });
 
 
