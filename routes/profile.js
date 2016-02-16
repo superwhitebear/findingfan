@@ -4,6 +4,8 @@ var router = express.Router();
 
 /* GET profile Listing. */
 router.get('/', function(req, res, next) {
+    
+    if(req.session.username){
     var db = req.db;
     var collection = db.get('profiles');
     collection.find({}, {}, function(e, docs) {
@@ -11,6 +13,9 @@ router.get('/', function(req, res, next) {
             profilelist: docs
         });
     });
+    }eles{
+        res.send('You are not authenticate,please login again <META http-equiv="refresh" content="1;URL=http://localhost:3000/">');
+    }
 });
 
 
