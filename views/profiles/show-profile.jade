@@ -1,0 +1,26 @@
+extends ../layout
+
+block content
+	h1 <strong>..::Profile::..</strong>
+	p <strong>Total:</strong> #{profilelist.length}
+		span  | 
+			a(href='/profile/create') Create profile
+	ul
+		each profile in profilelist
+				img(src='profilepics-list.jpg')
+				ul
+				&nbsp; 
+				a(href="/profile/remove/#{profile.name}") Remove Profile
+				p <strong>Name:</strong> #{profile.name}
+				p <strong>Age:</strong> #{profile.age}
+				p <strong>Weight (kg):</strong> #{profile.w}
+				p <strong>Hight (cm):</strong> #{profile.h}
+				p <strong>Birthday:</strong> #{profile.birthday}
+				p <strong>Gender:</strong> #{profile.gender}
+				p <strong>Location:</strong> #{profile.location}
+				p <strong>Life Style:</strong> #{profile.style}
+				p <strong>Facebook:</strong> #{profile.fb}
+				p <strong>Instargram:</strong> #{profile.ig}
+				p <strong>Twitter:</strong> #{profile.twitter}
+				p <strong>Line ID:</strong> #{profile.line}
+				p <strong>Interested in:</strong> #{profile.interested}

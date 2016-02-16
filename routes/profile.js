@@ -2,29 +2,88 @@ var express = require('express');
 var router = express.Router();
 
 
+/* GET profile Listing. */
 router.get('/', function(req, res, next) {
-    res.render('profiles/profile');
+    var db = req.db;
+    var collection = db.get('profiles');
+    collection.find({}, {}, function(e, docs) {
+        res.render('profiles/show-profile', {
+            profilelist: docs
+        });
+    });
 });
 
 
-router.post('/confirm', function(req, res, next) {
+router.get('/create', function(req, res, next) {
+    res.render('profiles/profile');
+});
+
+router.post('/insert', function(req, res, next) {
+
+
+    var name = req.body.name;
+    var age =  req.body.age;
+    var weight = req.body.weight;
+    var hight =  req.body.hight;
+    var birthday = req.body.birthday;
+    var gender = req.body.gender;
+    var location =  req.body.location;
+    var style = req.body.style;
+    var facebook = req.body.facebook;
+    var ig = req.body.ig;
+    var twitter = req.body.twitter;
+    var line = req.body.line;
+    var interested = req.body.interested;
+
+    var db = req.db;
+    var collection = db.get('profiles');
+
+    collection.insert({
+
+        name: name,
+        age: age,
+        weight: weight,
+        hight: hight,
+        birthday: birthday,
+        gender: gender,
+        location: location,
+        style: style,
+        facebook: facebook,
+        ig: ig,
+        twitter: twitter,
+        line: line,
+        interested: interested
+
+    }, function(err, docs) {
+        if (err) {
+            res.send("There was a problem adding the information to the database.");
+        } else {
+            // redirect to /users 
+            res.redirect('/profile');
+        }
+    })
+});
+
+
+router.get('/remove/:name', function(req, res, next) {
+
+    var name = req.params.name;
     
-    var confirmProfile = {
-        name: req.body.name,
-        age: req.body.age,
-        weight: req.body.weight,
-        hight: req.body.hight,
-        birthday: req.body.birthday,
-        gender: req.body.gender,
-        location: req.body.location,
-        style: req.body.style,
-        facebook: req.body.facebook,
-        ig: req.body.ig,
-        twitter: req.body.twitter,
-        line: req.body.line,
-        interested: req.body.interested
-    };
-	 res.render('profiles/confirm-profile', confirmProfile);
+    var db = req.db;
+    var collection = db.get('profiles');
+
+    collection.remove({
+        name: name
+    }, function(err, docs) {
+        if (err) {
+            res.send("There was a problem adding the information to the database.");
+        } else {
+            res.redirect('/profile');
+        }
+    })
+    
+
+    
 });
 
 module.exports = router;
