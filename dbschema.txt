@@ -4,5 +4,5 @@ Collection = users -->   db.users.insert({username: 'admin',passwd: 'admin'})
 
 
 
-Collection = profiles  -->   db.users.insert({username: 'admin',age: '45',weight: '80',hight: '180',birthday:'1 Jan 2530',gender: 'Male' ,location: 'Thailand',style: '',facebook: 'soulmate',ig: '@soulmate',twitter: '@tsoulmate',line: 'soul_mate',interrested: 'Gay'})
+Collection = profiles  -->   db.profiles.insert({username: 'admin',age: '45',weight: '80',hight: '180',birthday:'1 Jan 2530',gender: 'Male' ,location: 'Thailand',style: '',facebook: 'soulmate',ig: '@soulmate',twitter: '@tsoulmate',line: 'soul_mate',interrested: 'Gay'})
 WriteResult({ "nInserted" : 1 })
