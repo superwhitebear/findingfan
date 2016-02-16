@@ -13,7 +13,7 @@ router.get('/', function(req, res, next) {
             profilelist: docs
         });
     });
-    }eles{
+    }else{
         res.send('You are not authenticate,please login again <META http-equiv="refresh" content="1;URL=http://localhost:3000/">');
     }
 });
