@@ -85,7 +85,6 @@ router.post('/search',function(req, res, next){
    					res.render('list', {docs: docs});
    				});
    		}
-		//
 	}else{
 		res.send('You are not authenticate,please login again <META http-equiv="refresh" content="1;URL=http://localhost:3000/">');
 	}
