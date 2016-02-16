@@ -19,15 +19,5 @@ router.get('/', function(req, res, next){
 });
   
 
-router.get('/profile',function(req, res, next){
-	res.render('profile');
-});
 
-router.get('/search/',function(req, res ,next){
-	res.render('search', {username: req.params.usrname});
-});
-
-router.post('/search/:usrname',function(req, res, next){
-
-});
 module.exports = router;

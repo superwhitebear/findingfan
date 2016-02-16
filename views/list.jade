@@ -4,6 +4,9 @@ html
 		title show
 	body
 		h1 Show All Register User 
+		div
+			a(href='/profile') Create Profile
+		div
 			ul
 				- each doc in docs
 					li= 'user: ' + doc.username + ' Age: ' + doc.age + ' Interest: ' + doc.interrested 
