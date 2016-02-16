@@ -7,22 +7,16 @@ router.post('/', function(req, res, next) {
 	var	passwd = req.body.password;
 
 	var db = req.db;
-
-	    var db = req.db;
-
-    if(db){
-    	res.send('connect')
-    }else{
-    	res.send('fail')
-    }
-
     // db.get(collection's name)
     var collection = db.get('users');
 
-    // find({},{}, function(err,docs))
-    // render('users/list', {} )
-    collection.find({username:'aa'}, function(e, docs) {
-        res.send('Success')
+    collection.find({'username': usrname, 'passwd': passwd}, function(e, docs) {
+        if (docs.length==1){
+            req.session.username = usrname;
+            res.redirect('/list');
+        }else{
+            res.send('Fail to Login <META http-equiv="refresh" content="1;URL=http://localhost:3000">');
+        }
     });
 
 
