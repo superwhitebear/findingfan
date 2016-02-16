@@ -67,24 +67,12 @@ router.get('/search',function(req, res, next){
 router.post('/search',function(req, res, next){
 	if (req.session.username){
 		var name = req.body.name;
-		var	interseted = req.body.interseted;
-		
-		var db = req.db;
-   		var collection = db.get('profiles');
 
-   		//console.log(name.length);
-   		// if(name.length>0){
-   			collection.find({'username': name}, function(e, docs) {
-   				res.render('list', {docs: docs});
-   			});
-		   	// collection.find({'username': name, 'interseted': interseted}, function(e, docs) {
-		    //     if (docs.length==1){
-		    //         req.session.username = usrname;
-		    //         res.redirect('/list');
-		    //     }
-		    // });
-   		// }
-		//
+   		var db = req.db;
+    	var collection = db.get('profiles');
+		collection.find({'username': name},{},function(e,docs){
+    		res.render('list', {docs: docs});
+  		})
 	}else{
 		res.send('You are not authenticate,please login again <META http-equiv="refresh" content="1;URL=http://localhost:3000/">');
 	}
