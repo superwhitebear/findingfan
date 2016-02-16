@@ -55,5 +55,14 @@ router.get ('/Add/:usrname',function(req, res, next){
 	// res.send('Added ' + req.params.usrname + ' to friend list <META http-equiv="refresh" content="1;URL=http://localhost:3000/list">');
 });
 
+router.get('/search',function(req, res, next){
+	if (req.session.username){
+		res.render('search');
+	}else{
+		res.send('You are not authenticate,please login again <META http-equiv="refresh" content="1;URL=http://localhost:3000/">');
+	}
+	
+});
+
 
 module.exports = router;
