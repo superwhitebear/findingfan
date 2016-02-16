@@ -13,13 +13,11 @@ var db = monk('localhost:27017/findingfan');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var list = require('./routes/list');
-<<<<<<< HEAD
+
 var profile = require('./routes/profile')
 
-//test add line
-=======
 //add from branch
->>>>>>> TestBranch
+
 
 var app = express();
 
